@@ -39,7 +39,7 @@ class CassandraIO {
   function urlBuilder() {
     for ($i = 0; $i < func_num_args(); $i++) {
       if ($i == 0) {
-        $url = 'https:/api.cassandra.io/1' . func_get_arg($i);
+        $url = 'https://api.cassandra.io/1' . func_get_arg($i);
       } else {
         $url = $url . func_get_arg($i);
       }
