@@ -41,10 +41,10 @@ $cIO = new CassandraIO('<token>', '<accountId'>);
 * `accountId` Basic authentication password found in Heroku add-on settings.
 
 ## Validation Types
-* `CassandraIO.UTF8Type` 
-* `CassandraIO.LongType` 
-* `CassandraIO.CounterType`
-* `CassandraIO.TimeUUIDType`
+* `UTF8Type` 
+* `LongType` 
+* `CounterType`
+* `TimeUUIDType`
 
 ### RESTful API
 
@@ -66,7 +66,7 @@ To delete a keyspace:
 To create a column family:
 
 
-    $cIO->create_columnfamily('keyspace', 'countercolumnfamily', CassandraIO.CounterType)
+    $cIO->create_columnfamily('keyspace', 'countercolumnfamily', CounterType)
     
     
 To view column families:
@@ -90,19 +90,19 @@ To delete a column family:
 To specify a column:
 
 
-    $cIO->create_column('keyspace', 'columnfamily', 'nonindexedcolumn', CassandraIO.LongType)
+    $cIO->create_column('keyspace', 'columnfamily', 'nonindexedcolumn', LongType)
     
 
 To index a column:
 
 
-    $cIO->create_indexed_column('keyspace', 'columnfamily', 'indexedcolumn', CassandraIO.UTF8Type)
+    $cIO->create_indexed_column('keyspace', 'columnfamily', 'indexedcolumn', UTF8Type)
     
     
 To remove an index from a column:
 
 
-    $cIO->remove_indexed_column('keyspace', 'columnfamily', 'indexedcolumn', CassandraIO.UTF8Type)
+    $cIO->remove_indexed_column('keyspace', 'columnfamily', 'indexedcolumn', UTF8Type)
     
  
 To post data with ttl attributes:

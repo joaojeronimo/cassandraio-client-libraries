@@ -1,12 +1,13 @@
 <?php
+
+/* Comparator types */
+define('UTF8Type', 'UTF8Type');
+define('LongType', 'LongType');
+define('CounterType', 'CounterType');
+define('TimeUUIDType', 'TimeUUIDType');
+
 /* cassandra.io php helper library */
 class CassandraIO {
-
-  /* Comparator types */
-  define('UTF8Type', 'UTF8Type');
-  define('LongType', 'LongType');
-  define('CounterType', 'CounterType');
-  define('TimeUUIDType', 'TimeUUIDType');
   
   function request($method, $url, $paramsArray) {
     $curl_handle = curl_init();
@@ -172,7 +173,7 @@ class CassandraIO {
   }
   
   /* POST /v0.1/counter/{kName}/{cfName}/{rowKey}/?columnName=(your counter column name)&count=(your incremented or decremented value) */
-  function increment_count(kName, $cfName, $rowKey, $columnName, $count) {
+  function increment_count($kName, $cfName, $rowKey, $columnName, $count) {
     $params = array(
       'count' => '-' . $count
     );
@@ -180,7 +181,7 @@ class CassandraIO {
   }
   
   /* POST /v0.1/counter/{kName}/{cfName}/{rowKey}/{columnName}?count=(your incremented or decremented value) */
-  function decrement_count(kName, $cfName, $rowKey, $columnName, $count) {
+  function decrement_count($kName, $cfName, $rowKey, $columnName, $count) {
     $params = array(
       'count' => '-' . $count
     );
