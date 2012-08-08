@@ -37,12 +37,9 @@ class CassandraIO {
   }
   
   function urlBuilder() {
+	$url = 'https://api.cassandra.io/1';
     for ($i = 0; $i < func_num_args(); $i++) {
-      if ($i == 0) {
-        $url = 'https://api.cassandra.io/1' . func_get_arg($i);
-      } else {
-        $url = $url . func_get_arg($i);
-      }
+    	$url .= '/' . func_get_arg($i);
     }
     return $url;
   }
@@ -64,49 +61,49 @@ class CassandraIO {
   
   /* POST  /v0.1/setup */
   function setup() {
-    return $this->request('POST', $this->urlBuilder('/setup'), NULL);
+    return $this->request('POST', $this->urlBuilder('setup'), NULL);
   }
   
   /* POST  /v0.1/setupaccount */
   function setupaccount() {
-    return $this->request('POST', $this->urlBuilder('/setupaccount'), NULL);
+    return $this->request('POST', $this->urlBuilder('setupaccount'), NULL);
   }
   
   /* POST  /v0.1/keyspace/{kName} */
   function create_keyspace($kName) {
     $params = array(
     );
-    return $this->request('POST', $this->urlBuilder('/keyspace', $kName), $params);
+    return $this->request('POST', $this->urlBuilder('keyspace', $kName), $params);
   }
   
   /* DELETE  /v0.1/keyspace/{kName} */
   function delete_keyspace($kName) {
-    return $this->request('DELETE', $this->urlBuilder('/keyspace', $kName), NULL);
+    return $this->request('DELETE', $this->urlBuilder('keyspace', $kName), NULL);
   }
   
   /* GET  /v0.1/columnfamily/{kName}/? */
   function get_columnfamilies($kName) {
-    return $this->request('GET', $this->urlBuilder('/columnfamily', $kName), NULL);
+    return $this->request('GET', $this->urlBuilder('columnfamily', $kName), NULL);
   } 
   
   /* GET  /v0.1/columnfamily/{kName}/{cfName}/? */
   function get_columnfamily($kName, $cfName) {
-    return $this->request('GET', $this->urlBuilder('/columnfamily', $kName, $cfName), NULL);
+    return $this->request('GET', $this->urlBuilder('columnfamily', $kName, $cfName), NULL);
   }
   
   /* POST  /v0.1/columnfamily/{kName}/{cfName}/{cType}/? */
   function create_columnfamily($kName, $cfName, $cType) {
-    return $this->request('POST', $this->urlBuilder('/columnfamily', $kName, $cfName, $cfType), NULL);
+    return $this->request('POST', $this->urlBuilder('columnfamily', $kName, $cfName, $cfType), NULL);
   }
   
   /* DELETE  /v0.1/columnfamily/{kName}/{cfName}/? */
   function delete_columnfamily($kName, $cfName) {
-    return $this->request('DELETE', $this->urlBuilder('/columnfamily', $kName, $cfName), NULL);
+    return $this->request('DELETE', $this->urlBuilder('columnfamily', $kName, $cfName), NULL);
   }
   
   /* POST  /v0.1/column/{kName}/{cfName}/{cName}/{cType}/? */
   function create_column($kName, $cfName, $cName, $cType) {
-    return $this->request('POST', $this->urlBuilder('/column', $kName, $cfName, $cName, $cType), NULL);
+    return $this->request('POST', $this->urlBuilder('column', $kName, $cfName, $cName, $cType), NULL);
   }
   
   /* POST  /v0.1/column/{kName}/{cfName}/{cName}/{cType}/? >isIndexed=true */
@@ -114,7 +111,7 @@ class CassandraIO {
     $params = array(
       'isIndexed' => 'true'
     );
-    return $this->request('POST', $this->urlBuilder('/column', $kName, $cfName, $cName, $cType), $params);
+    return $this->request('POST', $this->urlBuilder('column', $kName, $cfName, $cName, $cType), $params);
   }
   
   /* POST  /v0.1/column/{kName}/{cfName}/{cName}/{cType}/? >isIndexed=false */
@@ -122,7 +119,7 @@ class CassandraIO {
     $params = array(
       'isIndexed' => 'false'
     );
-    return $this->request('POST', $this->urlBuilder('/column', $kName, $cfName, $cName, $cType), $params);
+    return $this->request('POST', $this->urlBuilder('column', $kName, $cfName, $cName, $cType), $params);
   }
   
   /* POST  /v0.1/data/{kName}/{cfName}/{rowKey}/? */
@@ -132,7 +129,7 @@ class CassandraIO {
     );
     if ($ttl)
       $params['ttl'] = $ttl;
-    return $this->request('POST', $this->urlBuilder('/data', $kName, $cfName, $rowKey), $params);
+    return $this->request('POST', $this->urlBuilder('data', $kName, $cfName, $rowKey), $params);
   }
   
   /* POST  /v0.1/data/{kName}/{cfName}/? >body=<json> */
@@ -142,7 +139,7 @@ class CassandraIO {
   
   /* GET  /v0.1/data/{kName}/{cfName}/{rowKey}/? */
   function get_data($kName, $cfName, $rowKey) {
-    return $this->request('GET', $this->urlBuilder('/data', $kName, $cfName, $rowKey), NULL);
+    return $this->request('GET', $this->urlBuilder('data', $kName, $cfName, $rowKey), NULL);
   }
   
   /* GET /v0.1/data/{kName}/{cfName}/{rowKey}?limit=(limit num of results)&fromKey=(key to start range) */
@@ -151,17 +148,17 @@ class CassandraIO {
       'fromKey' => $fromKey,
       'limit' => $limit
     );
-    return $this->request('GET', $this->urlBuilder('/data', $kName, $cfName, $rowKey, $this->getUrlBuilder($params)), NULL);
+    return $this->request('GET', $this->urlBuilder('data', $kName, $cfName, $rowKey, $this->getUrlBuilder($params)), NULL);
   }
   
   /* DELETE  /v0.1/data/{kName}/{cfName}/{rowKey}/{cName}/? */
   function delete_column($kName, $cfName, $rowKey, $cName) {
-    return $this->request('DELETE', $this->urlBuilder('/data', $kName, $cfName, $rowKey, $cName), NULL);
+    return $this->request('DELETE', $this->urlBuilder('data', $kName, $cfName, $rowKey, $cName), NULL);
   }
   
   /* DELETE  /v0.1/data/{kName}/{cfName}/{rowKey}/? */
   function delete_row($kName, $cfName, $rowKey) {
-    return $this->request('DELETE', $this->urlBuilder('/data', $kName, $cfName, $rowKey), NULL);
+    return $this->request('DELETE', $this->urlBuilder('data', $kName, $cfName, $rowKey), NULL);
   }
   
   /* GET  /v0.1/cql/{kName}/{cfName}/? */
@@ -169,7 +166,7 @@ class CassandraIO {
     $params = array(
       'select' => $query
     );
-    return $this->request('GET', $this->urlBuilder('/cql', $kName, $cfName, $this->getUrlBuilder($params)), NULL);
+    return $this->request('GET', $this->urlBuilder('cql', $kName, $cfName, $this->getUrlBuilder($params)), NULL);
   }
   
   /* POST /v0.1/counter/{kName}/{cfName}/{rowKey}/?columnName=(your counter column name)&count=(your incremented or decremented value) */
@@ -177,7 +174,7 @@ class CassandraIO {
     $params = array(
       'count' => '-' . $count
     );
-    return $this->request('POST', $this->urlBuilder('/counter', $kName, $cfName, $rowKey, $columnName, $count), $params);
+    return $this->request('POST', $this->urlBuilder('counter', $kName, $cfName, $rowKey, $columnName, $count), $params);
   }
   
   /* POST /v0.1/counter/{kName}/{cfName}/{rowKey}/{columnName}?count=(your incremented or decremented value) */
@@ -185,12 +182,12 @@ class CassandraIO {
     $params = array(
       'count' => '-' . $count
     );
-    return $this->request('POST', $this->urlBuilder('/counter', $kName, $cfName, $rowKey, $columnName, $count), $params);
+    return $this->request('POST', $this->urlBuilder('counter', $kName, $cfName, $rowKey, $columnName, $count), $params);
   }
   
   /* GET /v0.1/counter/{kName}/{cfName}/{rowKey}/{columnName}?count=(your incremented or decremented value) */
   function get_count($kName, $cfName, $rowKey, $columnName) {
-    return $this->request('GET', $this->urlBuilder('/counter', $kName, $cfName, $rowKey, $columnName), NULL);
+    return $this->request('GET', $this->urlBuilder('counter', $kName, $cfName, $rowKey, $columnName), NULL);
   }
   
 }
