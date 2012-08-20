@@ -8,6 +8,14 @@ define('TimeUUIDType', 'TimeUUIDType');
 
 /* cassandra.io php helper library */
 class CassandraIO {
+	
+	private $token;
+	private $accountId;
+	
+	public function __construct($token, $accountId) {
+		$this->token = $token;
+		$this->accountId = $accountId;
+	}
   
   function request($method, $url, $paramsArray) {
     $curl_handle = curl_init();
@@ -93,7 +101,7 @@ class CassandraIO {
   
   /* POST  /v0.1/columnfamily/{kName}/{cfName}/{cType}/? */
   function create_columnfamily($kName, $cfName, $cType) {
-    return $this->request('POST', $this->urlBuilder('columnfamily', $kName, $cfName, $cfType), NULL);
+    return $this->request('POST', $this->urlBuilder('columnfamily', $kName, $cfName, $cType), NULL);
   }
   
   /* DELETE  /v0.1/columnfamily/{kName}/{cfName}/? */
