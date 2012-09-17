@@ -8,6 +8,16 @@ A Java helper library for a RESTful interface with a CassandraIO application.
 
 * Maven
 
+## Maven repository
+
+You can download the jar from our public repository at: http://repository.m2m.io:8081/nexus/content/repositories/public-releases
+
+using the following POM parameters:
+
+	<groupId>io.cassandra.sdk</groupId>
+	<artifactId>cassandraio-java</artifactId>
+	<version>0.0.1</version>
+
 ## Usage
 
 ### Creating a keyspace:
