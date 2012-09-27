@@ -61,52 +61,16 @@
       <file leaf-file-name="CassandraLibrary.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="2.8093646">
+            <state line="121" column="6" selection-start="5137" selection-end="5155" vertical-scroll-proportion="0.32274246">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatusMessageModel.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
+      <file leaf-file-name="Column.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/Column.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="36" selection-start="1184" selection-end="1192" vertical-scroll-proportion="-17.52">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyspaceAPI.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/keyspace/KeyspaceAPI.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="610" selection-end="628" vertical-scroll-proportion="-6.6">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColumnFamilyAPI.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyAPI.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="97" selection-start="944" selection-end="944" vertical-scroll-proportion="-8.4">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColumnFamiliesModel.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamiliesModel.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="655" selection-end="655" vertical-scroll-proportion="-7.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColumnFamilyModel.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyModel.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="69" selection-start="611" selection-end="626" vertical-scroll-proportion="-7.8">
+            <state line="20" column="28" selection-start="689" selection-end="696" vertical-scroll-proportion="-11.4">
               <folding />
             </state>
           </provider>
@@ -115,7 +79,34 @@
       <file leaf-file-name="ColumnFamily.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamily.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="-6.6">
+            <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="-6.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColumnFamilyAPI.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyAPI.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="123" selection-start="970" selection-end="986" vertical-scroll-proportion="-7.8">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColumnFamilyModel.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyModel.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="74" selection-start="840" selection-end="850" vertical-scroll-proportion="-9.6">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CounterAPI.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/counter/CounterAPI.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="-2.4">
               <folding />
             </state>
           </provider>
@@ -136,8 +127,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="589" />
-    <option name="y" value="103" />
+    <option name="x" value="408" />
+    <option name="y" value="76" />
     <option name="width" value="1881" />
     <option name="height" value="958" />
   </component>
@@ -289,7 +280,59 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="keyspace" />
+              <option name="myItemId" value="counter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CassandraIO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clojure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandraio-java-0-1.0.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="columnfamily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CassandraIO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clojure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandraio-java-0-1.0.3.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="column" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,6 +515,24 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1b189229-a5c4-4a26-b51a-75f9bc21ecd7" name="Default" comment="" />
@@ -481,7 +542,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="589" y="103" width="1881" height="958" extended-state="0" />
+    <frame x="408" y="76" width="1881" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -498,7 +559,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18657938" sideWeight="0.7467145" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25328556" sideWeight="0.9967267" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25328556" sideWeight="0.9967267" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -570,11 +631,6 @@
         <state line="5" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="-2.4" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/counter/CounterAPI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="-2.4" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/conn/DefaultAPIConnection.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="1" selection-start="574" selection-end="574" vertical-scroll-proportion="0.3125" />
@@ -590,21 +646,6 @@
         <state line="7" column="41" selection-start="267" selection-end="273" vertical-scroll-proportion="0.18255578" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/CassandraIoSDK.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="48" selection-start="635" selection-end="635" vertical-scroll-proportion="-0.03125" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/column/ColumnAPI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="-2.4" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/Column.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-2.4" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamiliesModel.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="1" selection-start="655" selection-end="655" vertical-scroll-proportion="-7.8">
@@ -612,23 +653,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyModel.class">
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="69" selection-start="611" selection-end="626" vertical-scroll-proportion="-7.8">
+        <state line="33" column="36" selection-start="1184" selection-end="1192" vertical-scroll-proportion="0.7643979">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyAPI.class">
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="97" selection-start="944" selection-end="944" vertical-scroll-proportion="-8.4">
+        <state line="5" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.10714286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamily.class">
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/CassandraIoSDK.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="-6.6">
+        <state line="16" column="48" selection-start="635" selection-end="635" vertical-scroll-proportion="7.0">
           <folding />
         </state>
       </provider>
@@ -640,16 +681,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="36" selection-start="1184" selection-end="1192" vertical-scroll-proportion="-17.52">
+        <state line="14" column="123" selection-start="970" selection-end="986" vertical-scroll-proportion="-7.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/column/ColumnAPI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="196" selection-start="770" selection-end="777" vertical-scroll-proportion="-6.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="74" selection-start="840" selection-end="850" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/counter/CounterAPI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="-2.4" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamily.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="-6.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/Column.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="28" selection-start="689" selection-end="696" vertical-scroll-proportion="-11.4">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="2.8093646">
+        <state line="121" column="6" selection-start="5137" selection-end="5155" vertical-scroll-proportion="0.32274246">
           <folding />
         </state>
       </provider>

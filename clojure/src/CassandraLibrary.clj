@@ -1,27 +1,27 @@
-(def accountIdTemp "38488a4c-babd-48e8-a127-c89b0b9ac944")  ;;global Temp
-(def tokenTemp "LerldAfIAk")                                ;;global Temp
+(def accountIdTemp "38488a4c-babd-48e8-a127-c89b0b9ac944")   ;;global Temp
+(def tokenTemp "LerldAfIAk")                                 ;;global Temp
 
 ;;init value
 (set! (. io.cassandra.sdk.constants.APIConstants API_VERSION) "1")
 
 ; Status Message API
 (defn isOK [StatusMessageObject]
-  (.isOk StatusMessageObject)                               ;return bool
+  (.isOk StatusMessageObject)                                ;return bool
  )
 (defn getMessageObj [StatusMessageObject]
-  (.getMessage StatusMessageObject)                         ;return string with message
+  (.getMessage StatusMessageObject)                          ;return string with message
   )
 (defn getStatusObj [StatusMessageObject]
-  (.getStatus StatusMessageObject)                          ;return string with status
+  (.getStatus StatusMessageObject)                           ;return string with status
   )
 (defn getDetailObj [StatusMessageObject]
-  (.getDetail StatusMessageObject)                          ;return string with detail
+  (.getDetail StatusMessageObject)                           ;return string with detail
   )
 (defn getTtlObj [StatusMessageObject]
-  (.getTtl StatusMessageObject)                             ;return integer
+  (.getTtl StatusMessageObject)                              ;return integer
   )
 (defn getErrorObj [StatusMessageObject]
-  (.getError StatusMessageObject)                           ;return string with Error
+  (.getError StatusMessageObject)                            ;return string with Error
   )
 
 (defn getAllInfoStatus [StatusMessageObject]
@@ -39,13 +39,13 @@
 (defn deleteKeyspace [keySpaceName accountId token]
   (def keySpace
     (KeyspaceAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-  (.deleteKeyspace keySpace keySpaceName)                   ;return StatusMessageObject
+  (.deleteKeyspace keySpace keySpaceName)                    ;return StatusMessageObject
   )
 
 (defn createKeyspace [keySpaceName accountId token]
   (def keySpace
     (KeyspaceAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-  (.createKeyspace keySpace keySpaceName)                   ;return StatusMessageObject
+  (.createKeyspace keySpace keySpaceName)                    ;return StatusMessageObject
   )
 
 ;ColumnFamily API
@@ -54,31 +54,36 @@
   (def columnFamily
     (ColumnFamilyAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
   (.createColumnFamily columnFamily keyspaceName columnFamilyName comparatorType)
-                                                            ;return StatusMessageObject
+                                                             ;return StatusMessageObject
   )
 
 (defn deleteColumnFamily [keyspaceName columnFamilyName accountId token]
   (def columnFamily
     (ColumnFamilyAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
   (.deleteColumnFamily columnFamily keyspaceName columnFamilyName)
-                                                            ;return StatusMessageObject
+                                                             ;return StatusMessageObject
   )
-
 
 (defn getColumnFamilyObjects [keyspaceName accountId token]
   (def columnFamily
     (ColumnFamilyAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
     (to-array
       (.getColumnfamilies
-        (.getColumnFamilies columnFamily keyspaceName )))   ;return array with columnfamily objects
+        (.getColumnFamilies columnFamily keyspaceName )))    ;return array with columnfamily objects
 )
+(defn getColumnFamily [accountId token keyspaceName columnFamilyName]
+  (def columnFamily
+    (ColumnFamilyAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.getColumnFamily columnFamily keyspaceName columnFamilyName)        ;return columnfamily object
+  )
+
 
 (defn getNameColumnFamily [columnFamilyObject]
-  (.getName (.getColumnfamily columnFamilyObject))          ;return string with name columnfamily
+  (.getName (.getColumnfamily columnFamilyObject))           ;return string with name columnfamily
  )
 
 (defn getSortedby [columnFamilyObject]
-  (.getSortedby (.getColumnfamily columnFamilyObject))      ;return string with name columnfamily
+  (.getSortedby (.getColumnfamily columnFamilyObject))       ;return string with name columnfamily
   )
 
 (defn getColumnFamiliesName [keyspaceName accountId token]
@@ -101,12 +106,35 @@
   (vec returnVector)                                         ;return 2d vector with ColumnFamily name and Sorted by
   )
 
+;Columns API
+(import 'io.cassandra.sdk.column.ColumnAPI)
+(defn upsertColumn [accountId token keySpaceName columnFamilyName columnName comparatorType isIndex]
+  (def column
+    (ColumnAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+    (.upsertColumn column keySpaceName columnFamilyName columnName comparatorType isIndex)
+                                                             ;return StatusMessageObject
+  )
+
+;(def getNameColumn [columnObject]
+;  (.getName columnObject)
+;  )
+
+(defn getColumnesObjects [accountId token keySpaceName columnFamilyName]
+  (def colunmFamily
+    (getColumnFamily accountId token keySpaceName columnFamilyName))
+  (to-array (.getColumns colunmFamily))                      ;return array with column objects
+  )
+
+;;(println (getNameColumn (aget (to-array (.getColumns colunmFamily)) 0)))
+
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(deleteColumnFamily "base2" "tab6" accountIdTemp tokenTemp)))
-(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
-
+;;(println (getColumnFamiliesName "base2" accountIdTemp tokenTemp))
+;;(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
+;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "AsciiType" true)))
+(println (getColumnesObjects accountIdTemp tokenTemp "base2" "tab1") )
 
 
 
