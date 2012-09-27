@@ -61,7 +61,25 @@
       <file leaf-file-name="CassandraLibrary.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="38" selection-start="2588" selection-end="2617" vertical-scroll-proportion="0.5234114">
+            <state line="112" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="2.8093646">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatusMessageModel.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="36" selection-start="1184" selection-end="1192" vertical-scroll-proportion="-17.52">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyspaceAPI.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/keyspace/KeyspaceAPI.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="28" selection-start="610" selection-end="628" vertical-scroll-proportion="-6.6">
               <folding />
             </state>
           </provider>
@@ -118,9 +136,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="886" />
-    <option name="y" value="31" />
-    <option name="width" value="1760" />
+    <option name="x" value="589" />
+    <option name="y" value="103" />
+    <option name="width" value="1881" />
     <option name="height" value="958" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -463,7 +481,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="886" y="31" width="1760" height="958" extended-state="0" />
+    <frame x="589" y="103" width="1881" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -479,8 +497,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19976635" sideWeight="0.7467145" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25328556" sideWeight="0.9994159" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18657938" sideWeight="0.7467145" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25328556" sideWeight="0.9967267" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -577,11 +595,6 @@
         <state line="16" column="48" selection-start="635" selection-end="635" vertical-scroll-proportion="-0.03125" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/keyspace/KeyspaceAPI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="629" selection-end="643" vertical-scroll-proportion="-6.6" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/column/ColumnAPI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="-2.4" />
@@ -595,13 +608,6 @@
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamiliesModel.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="1" selection-start="655" selection-end="655" vertical-scroll-proportion="-7.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="37" selection-start="694" selection-end="703" vertical-scroll-proportion="-9.24">
           <folding />
         </state>
       </provider>
@@ -627,9 +633,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/keyspace/KeyspaceAPI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="610" selection-end="628" vertical-scroll-proportion="-6.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/StatusMessageModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="36" selection-start="1184" selection-end="1192" vertical-scroll-proportion="-17.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="38" selection-start="2588" selection-end="2617" vertical-scroll-proportion="0.5234114">
+        <state line="112" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="2.8093646">
           <folding />
         </state>
       </provider>
