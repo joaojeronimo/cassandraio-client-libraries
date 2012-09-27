@@ -55,23 +55,35 @@
   (.getName (.getColumnfamily columnFamilyObject))          ;return string with name columnfamily
  )
 
+(defn getSortedby [columnFamilyObject]
+  (.getSortedby (.getColumnfamily columnFamilyObject))          ;return string with name columnfamily
+  )
+
 (defn getColumnFamiliesName [keyspaceName accountId token]
   (def colunmFamilyArray
     (getColumnFamilyObjects keyspaceName accountId token))
-  (def returnVector (vec (object-array 0)))
+  (def returnVector (vector))
   (areduce colunmFamilyArray i ret ()  (def returnVector
                                          (conj returnVector
                                            (getNameColumnFamily
                                              (aget colunmFamilyArray i)))))
-  (vec returnVector)                                         ;return vector ColumnFamili name
+  (vec returnVector)                                         ;return vector with ColumnFamily name
  )
+
+(defn getColumnFamiliesNameAndSortedBy [keyspaceName accountId token]
+  (def colunmFamilyArray
+    (getColumnFamilyObjects keyspaceName accountId token))
+  (def returnVector (vector))
+  (areduce colunmFamilyArray i ret ()  (def returnVector
+                                         (conj returnVector [(getNameColumnFamily (aget colunmFamilyArray i)) (getSortedby (aget colunmFamilyArray i))])))
+  (vec returnVector)                                         ;return 2d vector with ColumnFamily name and Sorted by
+  )
 
 ;;(createKeyspace "base2" accountIdTemp tokenTemp)
 ;;(deleteKeyspace "base2" accountIdTemp tokenTemp)
 ;;(createColumnFamily "base2" "tab5" "UTF8Type" accountIdTemp tokenTemp)
 ;;(deleteColumnFamily "base2" "tab1" accountIdTemp tokenTemp)
-(println (getColumnFamiliesName "base2" accountIdTemp tokenTemp))
-
+(println (getColumnFamiliesNameAndSortedBy "base1" accountIdTemp tokenTemp))
 
 
 
