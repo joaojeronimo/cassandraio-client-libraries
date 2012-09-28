@@ -194,6 +194,12 @@
                                                               ;return LinkedHashMap
   )
 
+(defn postData [accountId token keySpaceName columnFamilyName rowKey params ttlSeconds]
+  (def data
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.postData data keySpaceName columnFamilyName rowKey params ttlSeconds)
+                                                              ;return StatusMessageObject
+  )
 
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
@@ -208,5 +214,6 @@
 ;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
 ;;(println (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false))
-(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
+;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
 
+(println (getAllInfoStatus(postData accountIdTemp tokenTemp "base2" "tab1" "0" (java.util.HashMap. {"column1" "test3"}) 0)))
