@@ -153,6 +153,28 @@
   (vec returnVector)                                         ;return 2d vector with information about columns
   )
 
+;Counter API
+(import 'io.cassandra.sdk.counter.CounterAPI)
+(defn getCounter [accountId token keySpaceName columnFamilyName columnName rowKey]
+  (def myCounter
+    (CounterAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.getCounter myCounter keySpaceName columnFamilyName rowKey columnName)
+                                                              ;return LinkedHashMap with information about Counter
+  )
+
+(defn incrementCounter [accountId token keySpaceName columnFamilyName columnName rowKey incrementValue]
+  (def myCounter
+    (CounterAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+    (.incrementCounter myCounter keySpaceName columnFamilyName rowKey columnName incrementValue)
+                                                              ;return StatusMessageObject
+  )
+(defn decrementCounter [accountId token keySpaceName columnFamilyName columnName rowKey decrementValue]
+  (def myCounter
+    (CounterAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.decrementCounter myCounter keySpaceName columnFamilyName rowKey columnName decrementValue)
+                                                              ;return StatusMessageObject
+  )
+
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
@@ -161,7 +183,7 @@
 ;;(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
 ;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab2" "column2" "AsciiType" true)))
 ;;(println (getNameColumes accountIdTemp tokenTemp "base2" "tab1") )
-(println (getAllInfoColumes accountIdTemp tokenTemp "base2" "tab1"))
-
-
-
+;;(println (getAllInfoColumes accountIdTemp tokenTemp "base2" "tab1"))
+;;(println (getAllInfoStatus (incrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
+;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
+;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
