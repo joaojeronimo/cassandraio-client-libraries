@@ -168,12 +168,32 @@
     (.incrementCounter myCounter keySpaceName columnFamilyName rowKey columnName incrementValue)
                                                               ;return StatusMessageObject
   )
+
 (defn decrementCounter [accountId token keySpaceName columnFamilyName columnName rowKey decrementValue]
   (def myCounter
     (CounterAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
   (.decrementCounter myCounter keySpaceName columnFamilyName rowKey columnName decrementValue)
                                                               ;return StatusMessageObject
   )
+
+;CQL API does not work
+(import 'io.cassandra.sdk.cql.CqlAPI)
+(defn executeCqlQuery [accountId token keySpaceName columnFamilyName cqlQuery csvFormat]
+  (def myCql
+    (CqlAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+   (.executeCqlQuery myCql keySpaceName columnFamilyName cqlQuery csvFormat)
+
+  )
+
+;Data API
+(import 'io.cassandra.sdk.data.DataAPI)
+(defn getData [accountId token keySpaceName columnFamilyName rowKey limit fromKey]
+  (def data
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.getData data keySpaceName columnFamilyName rowKey limit fromKey)
+                                                              ;return LinkedHashMap
+  )
+
 
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
@@ -187,3 +207,6 @@
 ;;(println (getAllInfoStatus (incrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
+;;(println (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false))
+(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
+
