@@ -116,15 +116,15 @@
   )
 
 (defn getNameColumn [columnObject]
-  (.getName columnObject)
+  (.getName columnObject)                                    ;return string with name column
   )
 
 (defn isIndexColumn [columnObject]
-  (.isIndex columnObject)
+  (.isIndex columnObject)                                    ;return boolean index
   )
 
 (defn getValidatorColumn [columnObject]
-  (.getValidator columnObject)
+  (.getValidator columnObject)                               ;return string with validator column
   )
 
 (defn getColumnesObjects [accountId token keySpaceName columnFamilyName]
@@ -143,6 +143,16 @@
   (vec returnVector)                                         ;return vector with Columns name
   )
 
+(defn getAllInfoColumes [accountId token keySpaceName columnFamilyName]
+  (def columsArray (getColumnesObjects accountId token keySpaceName columnFamilyName))
+  (def returnVector (vector))
+  (areduce columsArray i ret () (def returnVector
+                                  (conj returnVector
+                                    [(getNameColumn (aget columsArray i)) (getValidatorColumn (aget columsArray i)) (isIndexColumn (aget columsArray i))]
+                                    )))
+  (vec returnVector)                                         ;return 2d vector with information about columns
+  )
+
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
@@ -150,9 +160,8 @@
 ;;(println (getColumnFamiliesName "base2" accountIdTemp tokenTemp))
 ;;(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
 ;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab2" "column2" "AsciiType" true)))
-(println (getNameColumes accountIdTemp tokenTemp "base2" "tab1") )
-
-
+;;(println (getNameColumes accountIdTemp tokenTemp "base2" "tab1") )
+(println (getAllInfoColumes accountIdTemp tokenTemp "base2" "tab1"))
 
 
 
