@@ -201,6 +201,13 @@
                                                               ;return StatusMessageObject
   )
 
+(defn postDataInColumn [accountId token keySpaceName columnFamilyName columnName rowKey data ttlSeconds]
+  (def myData
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (postData accountId token keySpaceName columnFamilyName rowKey (java.util.HashMap. {columnName data}) ttlSeconds)
+                                                              ;return StatusMessageObject
+  )
+
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
@@ -215,5 +222,4 @@
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
 ;;(println (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false))
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
-
-(println (getAllInfoStatus(postData accountIdTemp tokenTemp "base2" "tab1" "0" (java.util.HashMap. {"column1" "test3"}) 0)))
+(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column1" "1" "test" 0)))
