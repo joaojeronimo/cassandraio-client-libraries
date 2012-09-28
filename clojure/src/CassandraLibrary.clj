@@ -115,9 +115,17 @@
                                                              ;return StatusMessageObject
   )
 
-;(def getNameColumn [columnObject]
-;  (.getName columnObject)
-;  )
+(defn getNameColumn [columnObject]
+  (.getName columnObject)
+  )
+
+(defn isIndexColumn [columnObject]
+  (.isIndex columnObject)
+  )
+
+(defn getValidatorColumn [columnObject]
+  (.getValidator columnObject)
+  )
 
 (defn getColumnesObjects [accountId token keySpaceName columnFamilyName]
   (def colunmFamily
@@ -125,7 +133,15 @@
   (to-array (.getColumns colunmFamily))                      ;return array with column objects
   )
 
-;;(println (getNameColumn (aget (to-array (.getColumns colunmFamily)) 0)))
+(defn getNameColumes [accountId token keySpaceName columnFamilyName]
+  (def columsArray (getColumnesObjects accountId token keySpaceName columnFamilyName))
+  (def returnVector (vector))
+  (areduce columsArray i ret () (def returnVector
+                                  (conj returnVector
+                                    (getNameColumn
+                                      (aget columsArray i)))))
+  (vec returnVector)                                         ;return vector with Columns name
+  )
 
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
@@ -133,8 +149,8 @@
 ;;(println (getAllInfoStatus(deleteColumnFamily "base2" "tab6" accountIdTemp tokenTemp)))
 ;;(println (getColumnFamiliesName "base2" accountIdTemp tokenTemp))
 ;;(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
-;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "AsciiType" true)))
-(println (getColumnesObjects accountIdTemp tokenTemp "base2" "tab1") )
+;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab2" "column2" "AsciiType" true)))
+(println (getNameColumes accountIdTemp tokenTemp "base2" "tab1") )
 
 
 
