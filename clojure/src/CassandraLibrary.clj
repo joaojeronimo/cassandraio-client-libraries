@@ -71,7 +71,7 @@
       (.getColumnfamilies
         (.getColumnFamilies columnFamily keyspaceName )))    ;return array with columnfamily objects
 )
-(defn getColumnFamily [accountId token keyspaceName columnFamilyName]
+(defn getColumnFamilyObject [accountId token keyspaceName columnFamilyName]
   (def columnFamily
     (ColumnFamilyAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
   (.getColumnFamily columnFamily keyspaceName columnFamilyName)        ;return columnfamily object
@@ -129,7 +129,7 @@
 
 (defn getColumnesObjects [accountId token keySpaceName columnFamilyName]
   (def colunmFamily
-    (getColumnFamily accountId token keySpaceName columnFamilyName))
+    (getColumnFamilyObject accountId token keySpaceName columnFamilyName))
   (to-array (.getColumns colunmFamily))                      ;return array with column objects
   )
 
@@ -191,7 +191,12 @@
   (.postData myData keySpaceName columnFamilyName rowKey params ttlSeconds)
                                                               ;return StatusMessageObject
   )
-
+(defn postBulkData [accountId token keySpaceName columnFamilyName dataBulk]
+  (def myData
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.postBulkData myData keySpaceName columnFamilyName dataBulk)
+                                                              ;return StatusMessageObject
+  )
 (defn postDataInColumn [accountId token keySpaceName columnFamilyName columnName rowKey data ttlSeconds]
   (def myData
     (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
@@ -226,20 +231,22 @@
 
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
-;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
-;;(println (getAllInfoStatus(deleteColumnFamily "base2" "tab6" accountIdTemp tokenTemp)))
+;;(println (getAllInfoStatus(createColumnFamily "base2" "tab5" "UTF8Type" accountIdTemp tokenTemp)))
+;;(println (getAllInfoStatus(deleteColumnFamily "base2" "tab2" accountIdTemp tokenTemp)))
 ;;(println (getColumnFamiliesName "base2" accountIdTemp tokenTemp))
 ;;(println (getColumnFamiliesNameAndSortedBy "base2" accountIdTemp tokenTemp))
-;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab2" "column2" "AsciiType" true)))
+;;(println (getAllInfoStatus(upsertColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "AsciiType" true)))
 ;;(println (getNameColumes accountIdTemp tokenTemp "base2" "tab1") )
 ;;(println (getAllInfoColumes accountIdTemp tokenTemp "base2" "tab1"))
 ;;(println (getAllInfoStatus (incrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
-;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column1" "0" "test1" 0)))
-;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column4" "0" "test4" 0)))
-;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "0" "test3" 0)))
+;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column2" "0" "test2" 0)))
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
 ;;(println (getAllInfoStatus(deleteRowKey accountIdTemp tokenTemp "base2" "tab1" "0")))
-;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
-(println (getCqlMap (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false)))
+;;(println (getAllInfoStatus(deleteColumnData accountIdTemp tokenTemp "base2" "tab1" "0" "column1")))
+;;(println (getCqlMap (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false)))
+
+;;(def temp (createColumnFamily "base2" "tab8" "UTF8Type" accountIdTemp tokenTemp))
+
+;;(println (getMessageObj temp))
