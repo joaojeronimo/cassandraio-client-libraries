@@ -69,7 +69,7 @@
       <file leaf-file-name="CassandraLibrary.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="27" selection-start="10740" selection-end="10756" vertical-scroll-proportion="0.846678">
+            <state line="224" column="98" selection-start="10278" selection-end="10358" vertical-scroll-proportion="0.41226575">
               <folding />
             </state>
           </provider>
@@ -78,7 +78,7 @@
       <file leaf-file-name="DataAPI.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataAPI.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="196" selection-start="762" selection-end="784" vertical-scroll-proportion="-6.6">
+            <state line="18" column="176" selection-start="1467" selection-end="1568" vertical-scroll-proportion="-10.8">
               <folding />
             </state>
           </provider>
@@ -87,7 +87,7 @@
       <file leaf-file-name="DataMapModel.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataMapModel.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="1" selection-start="297" selection-end="297" vertical-scroll-proportion="-4.2">
+            <state line="8" column="1" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,6 +100,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -108,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="201" />
-    <option name="y" value="22" />
+    <option name="x" value="716" />
+    <option name="y" value="155" />
     <option name="width" value="1493" />
     <option name="height" value="958" />
   </component>
@@ -145,6 +148,20 @@
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CassandraIO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CassandraIO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -315,20 +332,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CassandraIO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CassandraIO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,9 +347,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Clojure Script.CassandraLibrary">
     <configuration default="false" name="CassandraLibrary" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
@@ -397,24 +400,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -440,6 +425,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -527,7 +530,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="201" y="22" width="1493" height="958" extended-state="0" />
+    <frame x="716" y="155" width="1493" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -613,58 +616,42 @@
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/column/ColumnAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="196" selection-start="770" selection-end="777" vertical-scroll-proportion="0.29464287">
-          <folding />
-        </state>
+        <state line="12" column="196" selection-start="770" selection-end="777" vertical-scroll-proportion="0.29464287" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamily.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="0.28795812">
-          <folding />
-        </state>
+        <state line="11" column="39" selection-start="388" selection-end="399" vertical-scroll-proportion="0.28795812" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="123" selection-start="970" selection-end="986" vertical-scroll-proportion="0.375">
-          <folding />
-        </state>
+        <state line="14" column="123" selection-start="970" selection-end="986" vertical-scroll-proportion="0.375" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/columnfamily/ColumnFamilyModel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="74" selection-start="840" selection-end="850" vertical-scroll-proportion="0.4450262">
-          <folding />
-        </state>
+        <state line="17" column="74" selection-start="840" selection-end="850" vertical-scroll-proportion="0.4450262" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/conn/DefaultAPIConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.10714286">
-          <folding />
-        </state>
+        <state line="5" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.10714286" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/conn/APIConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="30" selection-start="144" selection-end="144" vertical-scroll-proportion="0.05235602">
-          <folding />
-        </state>
+        <state line="3" column="30" selection-start="144" selection-end="144" vertical-scroll-proportion="0.05235602" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataBulkModel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.10471204">
-          <folding />
-        </state>
+        <state line="5" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.10471204" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/counter/CounterAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="188" selection-start="1043" selection-end="1057" vertical-scroll-proportion="-7.8">
-          <folding />
-        </state>
+        <state line="14" column="188" selection-start="1043" selection-end="1057" vertical-scroll-proportion="-7.8" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/clojure.jar!/clojure/lang/Compiler.class">
@@ -679,42 +666,36 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/cql/CqlAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="268" selection-end="274" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="17" selection-start="268" selection-end="274" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/constants/APIConstants.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="52" selection-start="774" selection-end="774" vertical-scroll-proportion="0.32484075">
-          <folding />
-        </state>
+        <state line="17" column="52" selection-start="774" selection-end="774" vertical-scroll-proportion="0.32484075" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/cql/CqlMapModel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="87" selection-start="570" selection-end="579" vertical-scroll-proportion="0.22929937">
-          <folding />
-        </state>
+        <state line="12" column="87" selection-start="570" selection-end="579" vertical-scroll-proportion="0.22929937" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataMapModel.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="297" selection-end="297" vertical-scroll-proportion="-4.2">
+        <state line="8" column="1" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/cassandraio-java-0-1.0.3.jar!/io/cassandra/sdk/data/DataAPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="196" selection-start="762" selection-end="784" vertical-scroll-proportion="-6.6">
+        <state line="18" column="176" selection-start="1467" selection-end="1568" vertical-scroll-proportion="-10.8">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CassandraLibrary.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="27" selection-start="10740" selection-end="10756" vertical-scroll-proportion="0.846678">
+        <state line="224" column="98" selection-start="10278" selection-end="10358" vertical-scroll-proportion="0.41226575">
           <folding />
         </state>
       </provider>

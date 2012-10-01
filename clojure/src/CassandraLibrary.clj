@@ -188,16 +188,16 @@
 ;Data API
 (import 'io.cassandra.sdk.data.DataAPI)
 (defn getData [accountId token keySpaceName columnFamilyName rowKey limit fromKey]
-  (def data
+  (def myData
     (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-  (.getData data keySpaceName columnFamilyName rowKey limit fromKey)
+  (.getData myData keySpaceName columnFamilyName rowKey limit fromKey)
                                                               ;return LinkedHashMap
   )
 
 (defn postData [accountId token keySpaceName columnFamilyName rowKey params ttlSeconds]
-  (def data
+  (def myData
     (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-  (.postData data keySpaceName columnFamilyName rowKey params ttlSeconds)
+  (.postData myData keySpaceName columnFamilyName rowKey params ttlSeconds)
                                                               ;return StatusMessageObject
   )
 
@@ -205,6 +205,19 @@
   (def myData
     (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
   (postData accountId token keySpaceName columnFamilyName rowKey (java.util.HashMap. {columnName data}) ttlSeconds)
+                                                              ;return StatusMessageObject
+  )
+(defn deleteColumnData [accountId token keySpaceName columnFamilyName rowKey columnName]
+  (def myData
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.deleteData myData keySpaceName columnFamilyName rowKey columnName)
+                                                              ;return StatusMessageObject
+  )
+
+(defn deleteRowKey [accountId token keySpaceName columnFamilyName rowKey]
+  (def myData
+    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.deleteData myData keySpaceName columnFamilyName rowKey)
                                                               ;return StatusMessageObject
   )
 
@@ -221,5 +234,9 @@
 ;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
 ;;(println (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false))
+;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column1" "0" "test1" 0)))
+;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column4" "0" "test4" 0)))
+;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "0" "test3" 0)))
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
-(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column1" "1" "test" 0)))
+;;(println (getAllInfoStatus(deleteRowKey accountIdTemp tokenTemp "base2" "tab1" "0")))
+;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
