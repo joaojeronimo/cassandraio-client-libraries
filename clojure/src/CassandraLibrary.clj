@@ -2,7 +2,7 @@
 (def tokenTemp "LerldAfIAk")                                 ;;global Temp
 
 ;;init value
-(set! (. io.cassandra.sdk.constants.APIConstants API_VERSION) "1")
+;;(set! (. io.cassandra.sdk.constants.APIConstants API_VERSION) "1")
 
 ; Status Message API
 (defn isOK [StatusMessageObject]
@@ -176,15 +176,6 @@
                                                               ;return StatusMessageObject
   )
 
-;CQL API does not work
-(import 'io.cassandra.sdk.cql.CqlAPI)
-(defn executeCqlQuery [accountId token keySpaceName columnFamilyName cqlQuery csvFormat]
-  (def myCql
-    (CqlAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-   (.executeCqlQuery myCql keySpaceName columnFamilyName cqlQuery csvFormat)
-
-  )
-
 ;Data API
 (import 'io.cassandra.sdk.data.DataAPI)
 (defn getData [accountId token keySpaceName columnFamilyName rowKey limit fromKey]
@@ -221,6 +212,18 @@
                                                               ;return StatusMessageObject
   )
 
+;CQL API
+(import 'io.cassandra.sdk.cql.CqlAPI)
+(defn executeCqlQuery [accountId token keySpaceName columnFamilyName cqlQuery csvFormat]
+  (def myCql
+    (CqlAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
+  (.executeCqlQuery myCql keySpaceName columnFamilyName cqlQuery csvFormat)
+                                                              ;return StatusMessageObject
+  )
+(defn getCqlMap [CqlMapModel]
+  (.getCqlMap CqlMapModel)                                    ;return LinkedHashMap
+  )
+
 ;;(println (getAllInfoStatus (createKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus (deleteKeyspace "base2" accountIdTemp tokenTemp)))
 ;;(println (getAllInfoStatus(createColumnFamily "base2" "tab7" "UTF8Type" accountIdTemp tokenTemp)))
@@ -233,10 +236,10 @@
 ;;(println (getAllInfoStatus (incrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getAllInfoStatus (decrementCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0" 5)))
 ;;(println (getCounter accountIdTemp tokenTemp "base2" "tab1" "column1" "0"))
-;;(println (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false))
 ;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column1" "0" "test1" 0)))
 ;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column4" "0" "test4" 0)))
 ;;(println (getAllInfoStatus(postDataInColumn accountIdTemp tokenTemp "base2" "tab1" "column3" "0" "test3" 0)))
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
 ;;(println (getAllInfoStatus(deleteRowKey accountIdTemp tokenTemp "base2" "tab1" "0")))
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
+(println (getCqlMap (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false)))
