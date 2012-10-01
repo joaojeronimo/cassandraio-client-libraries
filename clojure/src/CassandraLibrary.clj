@@ -191,12 +191,6 @@
   (.postData myData keySpaceName columnFamilyName rowKey params ttlSeconds)
                                                               ;return StatusMessageObject
   )
-(defn postBulkData [accountId token keySpaceName columnFamilyName dataBulk]
-  (def myData
-    (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
-  (.postBulkData myData keySpaceName columnFamilyName dataBulk)
-                                                              ;return StatusMessageObject
-  )
 (defn postDataInColumn [accountId token keySpaceName columnFamilyName columnName rowKey data ttlSeconds]
   (def myData
     (DataAPI. io.cassandra.sdk.constants.APIConstants/API_URL token accountId))
@@ -245,8 +239,4 @@
 ;;(println (getData accountIdTemp tokenTemp "base2" "tab1" "0" 0 ""))
 ;;(println (getAllInfoStatus(deleteRowKey accountIdTemp tokenTemp "base2" "tab1" "0")))
 ;;(println (getAllInfoStatus(deleteColumnData accountIdTemp tokenTemp "base2" "tab1" "0" "column1")))
-;;(println (getCqlMap (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false)))
-
-;;(def temp (createColumnFamily "base2" "tab8" "UTF8Type" accountIdTemp tokenTemp))
-
-;;(println (getMessageObj temp))
+(println (getCqlMap (executeCqlQuery accountIdTemp tokenTemp "base2" "tab1" "select *" false)))
