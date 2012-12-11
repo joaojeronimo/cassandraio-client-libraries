@@ -180,7 +180,7 @@ class CassandraIO {
   /* POST /v0.1/counter/{kName}/{cfName}/{rowKey}/?columnName=(your counter column name)&count=(your incremented or decremented value) */
   function increment_count($kName, $cfName, $rowKey, $columnName, $count) {
     $params = array(
-      'count' => '-' . $count
+      'count' => '+' . $count
     );
     return $this->request('POST', $this->urlBuilder('counter', $kName, $cfName, $rowKey, $columnName, $count), $params);
   }
